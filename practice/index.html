@@ -3,17 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
     <header></header>
+    <div class="dialogue">
+        <div class="dialogue__backdrop"></div>
+        <div class="dialogue__popup">
+            <header class="dialogue__popup-header">
+                <p class="dialogue__popup-title">Стать партнёром проекта</p>
+            </header>
+            <form class="form-partner" action="">
+                <div class="form-partner__row is-two-col">
+                    <div class="form-partner__col">
+                        <div class="form-partner__field">
+                            <label for="form-partner_organization" class="form-partner__label"><span>✱</span> Название организации</label>
+                            <input class="form-partner__input is-label" type="text" id="form-partner_organization" required>
+                        </div>
+                        <div class="form-partner__field">
+                            <label for="form-partner_phone" class="form-partner__label"><span>✱</span> Телефон</label>
+                            <input class="form-partner__input is-label" type="text" id="form-partner_phone" required>
+                        </div>
+                        <div class="form-partner__field">
+                            <label for="form-partner_email" class="form-partner__label"><span>✱</span> E-mail</label>
+                            <input class="form-partner__input is-label" type="text" id="form-partner_email" required>
+                        </div>
+                    </div>
+                    <div class="form-partner__col">
+                        <div class="form-partner__field is-file">
+                            <label for="form-partner__logo" class="form-partner__label"><span>✱</span> Логотип (jpeg, png)</label>
+                            <input class="" type="file" id="form-partner__logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-partner__field">
+                    <label for="" class="form-partner__label"><span>✱</span> Направление</label>
+                    <select class="form-partner__select is-label" name="cars" id="cars" required>
+                        <option value=""></option>
+                        <option value="t1">Экология</option>
+                        <option value="t2">Медицина</option>
+                        <option value="t3">Робототехника</option>
+                    </select>
+                </div>
+                <div class="form-partner__field">
+                    <label class="visually-hidden">Global</label>
+                    <input class="form-partner__input" type="text">
+                </div>
+                <div class="form-partner__field">
+                    <label class="visually-hidden">VK</label>
+                    <input class="form-partner__input" type="text">
+                </div>
+                <div class="form-partner__field">
+                    <label class="visually-hidden">ok</label>
+                    <input class="form-partner__input" type="text">
+                </div>
+                <div class="form-partner__field">
+                    <label class="visually-hidden">facebook</label>
+                    <input class="form-partner__input" type="text">
+                </div>
+                <div class="form-partner__field">
+                    <label class="visually-hidden">instagram</label>
+                    <input class="form-partner__input" type="text">
+                </div>
+                <div class="form-partner__field">
+                    <label class="visually-hidden">youtube</label>
+                    <input class="form-partner__input" type="text">
+                </div>
+                <div class="form-partner__field">
+                    <label for="form-partner_organization" class="form-partner__label">Руководитель</label>
+                    <input class="form-partner__input is-label" type="text" id="form-partner_organization">
+                </div>
+                <div class="form-partner__buttons">
+                    <button class="form-partner__btn btn">Стать партнёром проекта</button>
+                    <a href="" class="form-partner__link">Отменить</a>
+                </div>
+            </form>
+        </div>
+    </div>
     <main class="page-main">
         <div class="container">
             <section class="feedback-section">
-                <button class="btn">Стать партнерам</button>
+                <button type="button" class="btn">Стать партнерам</button>
             </section>
-    
         </div>
     </main>
     <footer></footer>
