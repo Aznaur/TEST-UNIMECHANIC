@@ -47,12 +47,24 @@ const cbTable = document.querySelector('.cb-table__body');
 const inputSearch = document.querySelector('.cb-text-field__input');
 let POSTS = [];
 
-inputSearch.addEventListener('input', function(evt){
+inputSearch.addEventListener('input', function(evt) {
     let value = evt.target.value.toLowerCase();
     const filterPost = POSTS.filter((post) => {
-        return post.title.includes(value);
+        let arr = Object.values(post).map((i) => String(i));
+        arr.splice(1,1);
+        return arr.join(' ').includes(value);
     });
-    render(filterPost);
+    if (filterPost.length) {
+        render(filterPost);
+    } else {
+        cbTable.innerHTML = `
+        <tr class="cb-table__row">
+            <td data-label="User id" class="cb-table__td" colspan="2">Совпадений не найдено</td>
+            <td data-label="User id" class="cb-table__td" ></td>
+        </tr>
+        `;
+    }
+
 });
 
 async function start() {
@@ -100,7 +112,6 @@ async function start() {
 
         });
     }catch (err) {
-        const tableWrapper = document.querySelector('.cb-table__wrapper');
         tableWrapper.style.color = 'red';
         tableWrapper.innerHTML = err.message;
     }
@@ -116,11 +127,9 @@ function render(posts = []) {
 function toHtml(post) {
     return`
     <tr class="cb-table__row">
-        <td data-label="User id " class="cb-table__td cb-table__td--id">${post.userId}</td>
-        <td data-label="Title " class="cb-table__td">${post.title}</td>
-        <td data-label="Body " class="cb-table__td">${post.body}</td>
+        <td data-label="User id" class="cb-table__td cb-table__td--id">${post.userId}</td>
+        <td data-label="Title" class="cb-table__td">${post.title}</td>
+        <td data-label="Body" class="cb-table__td">${post.body}</td>
     </tr>
     `
 }
-
-

@@ -345,6 +345,7 @@ body {
   box-sizing: border-box;
   border-collapse: collapse;
   font-family: "Lato", "Arial", sans-serif;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .cb-table__data {
@@ -516,4 +517,16 @@ body {
 }
 .is-error .cb-icon-clear {
   color: #EE3F58;
+}
+
+.cb-table__th-user-id {
+  width: 10%;
+}
+
+.cb-table__th-title {
+  width: 40%;
+}
+
+.cb-table__th-body {
+  width: 50%;
 }
